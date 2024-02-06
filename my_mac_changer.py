@@ -14,7 +14,7 @@ user_mac_address = user_inputs.mac_address
 
 print("My MacChanger Started!")
 
-
+#subprocesses for commands
 subprocess.call(["ifconfig", user_interface, "down"])
 subprocess.call(["ifconfig", user_interface, "hw", "ether", user_mac_address])
 subprocess.call(["ifconfig", user_interface, "up"])
