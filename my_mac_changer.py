@@ -6,6 +6,7 @@ parse_object.add_option("-i", "--interface", dest="interface", help="interface t
 parse_object.add_option("-m", "--mac", dest="mac_address", help="new mac address")
 
 #processing the tuples
+
 (user_inputs, arguments) = parse_object.parse_args()
 
 user_interface = user_inputs.interface
