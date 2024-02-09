@@ -1,5 +1,6 @@
 import subprocess
 import optparse
+import re
 
 
 def get_user_inputs():
@@ -19,7 +20,12 @@ def change_mac_address(user_interface, user_mac_address):
 
 def control_new_mac(interface):
     ifconfig = subprocess.check_output(["ifconfig", interface])
-    print(ifconfig)
+    new_mac = re.search(r"\w\w:\w\w:\w\w:\w\w:\w\w:\w\w", ifconfig)
+
+    if new_mac:
+        return new_mac.group(0)
+    else:
+        return None
 
 print("My MacChanger Started!")
 # Assigning arguments to function get_user_inputs
